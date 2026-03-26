@@ -1,53 +1,169 @@
-﻿# Danny'Blog
+<pre align="center">
+Glacio is a polished Astro blog template for personal sites, notes, and portfolios.
+</pre>
 
-一个基于 Astro 的个人网站/博客，记录日常、文章与项目。
+<div align="center">
+  <img alt="Template Logo" src="./public/template-mark.svg" width="140px">
+</div>
 
-## 技术栈
+<p align="center">
+  Built with Astro, TypeScript, Tailwind CSS, daisyUI, MDX, and Pagefind
+</p>
 
-- Astro 5（静态站点与内容渲染）
-- TypeScript
-- Tailwind CSS + daisyUI（样式与主题）
-- MDX/Markdown（内容写作）
-- Pagefind（站内搜索索引）
-- RSS/Sitemap（订阅与 SEO）
-- Expressive Code / Shiki 主题（代码高亮）
+## 📷 Preview
 
-## 功能概览
+<table>
+  <tr>
+    <td align="center"><strong>Light</strong></td>
+    <td align="center"><strong>Dark</strong></td>
+  </tr>
+  <tr>
+    <td><img alt="Glacio light preview" src="./public/image/white.png"></td>
+    <td><img alt="Glacio dark preview" src="./public/image/black.png"></td>
+  </tr>
+</table>
 
-- 深浅色主题切换
-- 文章分类与标签
-- 站内搜索
-- RSS 订阅与站点地图
-- 代码高亮与数学公式渲染
-- 响应式布局
+## ✨ Features
 
-## 目录结构（常用）
+- ✅ Light / dark mode
+- ✅ Responsive layout
+- ✅ MDX-based blog content
+- ✅ Categories, tags, archives, RSS, and sitemap
+- ✅ Pagefind local search
+- ✅ Iconify icon support
+- ✅ Reusable pages for home, about, projects, and links
+- ✅ Friendly for template customization
 
-- `frosti.config.yaml`：站点基本信息与菜单配置
-- `src/pages/`：页面与路由
-- `src/content/`：文章内容（如有）
-- `public/`：静态资源
+## 🧩 About This Template
 
-## 开发与构建
+This project, Glacio, is a heavily modified derivative of [Frosti](https://github.com/EveSunMaple/Frosti).
+
+It started as a learning reference and was later reworked substantially in structure, pages, styling, and content organization. This repository is intended to be shared as a reusable template rather than as a direct mirror of the original project.
+
+Main differences from the original basis include:
+
+- rewritten homepage and profile content structure
+- customized about, project, and friend-link pages
+- different default content and template-safe placeholder data
+- cleaned repository content for public reuse
+- adjusted configuration and asset defaults for easier forking
+
+## ⬇️ Usage
+
+1. Install `pnpm` if you do not already have it.
+
+```sh
+npm i -g pnpm
+```
+
+2. Clone this repository.
+
+```sh
+git clone <your-repo-url>
+cd <your-project-folder>
+```
+
+3. Install dependencies.
 
 ```sh
 pnpm install
+```
+
+4. Start local development.
+
+```sh
 pnpm run dev
 ```
 
-首次运行或内容更新后，建议先生成搜索索引：
+5. Generate the search index when needed.
 
 ```sh
 pnpm run search:index
 ```
 
-构建与预览：
+6. Build for production.
 
 ```sh
 pnpm run build
 pnpm run preview
 ```
 
-## 配置说明
+## 🔧 Configuration
 
-站点配置集中在 `frosti.config.yaml`，可修改标题、描述、菜单、头像与社交链接等。
+The main site configuration lives in `frosti.config.yaml`.
+
+You can update:
+
+- site title, tab text, description, language, and favicon
+- theme settings
+- navigation menu and submenus
+- user name, avatar, personal site, and social links
+
+Example:
+
+```yaml
+site:
+  tab: Glacio
+  title: Glacio
+  description: Glacio is a polished Astro blog template for personal sites, notes, and portfolios.
+  language: en
+  favicon: /template-mark.svg
+
+user:
+  name: Glacio User
+  site: "https://example.com/"
+  avatar: /template-avatar.svg
+```
+
+## ✒️ Article Frontmatter
+
+| Name | Meaning | Required |
+| :--- | :------ | :------: |
+| `title` | Article title | Yes |
+| `description` | Article description | Yes |
+| `pubDate` | Publication date | Yes |
+| `updated` | Updated date | No |
+| `image` | Cover image | No |
+| `categories` | Article categories | No |
+| `tags` | Article tags | No |
+| `badge` | Badge text | No |
+| `draft` | Draft status | No |
+
+Sample article files are in `src/content/blog/`.
+
+## 💬 Comments
+
+This template does not ship with a live comment backend enabled by default.
+
+If you want comments:
+
+- connect your own Waline or other comment service
+- update the related component configuration before deployment
+- verify all external service URLs belong to you
+
+## 🌍 i18n
+
+Interface text is managed in `src/i18n/translations.yaml`.
+
+You can:
+
+- change the default language in `frosti.config.yaml`
+- edit existing translations
+- add a new language section if needed
+
+## 🚀 Updating
+
+This repository includes `frosti.update.sh` as a convenience script for template maintenance.
+
+Before using it, make sure the upstream repository URL inside the script is changed to your own maintained source if needed.
+
+## 👀 Notes
+
+- The repository has been cleaned to remove prior personal profile content and private-facing materials.
+- Placeholder text and assets are included so the template can be forked safely.
+- Replace all example links, avatars, and profile copy before publishing your own site.
+
+## 🎉 Acknowledgements
+
+- [EveSunMaple / Frosti](https://github.com/EveSunMaple/Frosti) for the original project that inspired and informed this template
+- This repository is not the original Frosti project; it is a substantially modified derivative built for a different use case

@@ -1,28 +1,21 @@
-﻿---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+---
 import { Icon } from "astro-icon/components";
 import MainCard from "@/components/MainCard.astro";
 import FriendCard from "@/components/mdx/FriendCard.astro";
+import LinkCard from "@/components/mdx/LinkCard.astro";
+import Showcase from "@/components/mdx/Showcase.astro";
 import Card from "@/components/temple/Card.astro";
 import CardGroup from "@/components/temple/CardGroup.astro";
-import Showcase from "@/components/mdx/Showcase.astro";
-import Comments from "@/components/widgets/Comments.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const sites = [{ name: "Frosti Demo", url: "https://frosti.saroprock.com/" }];
-const commentPath = "/friend";
-const applyTemplate = [
-  { label: "Name", value: "Danny's Blog" },
-  { label: "Desc", value: "Cogito, ergo sum." },
-  { label: "Link", value: "https://dannyshi.pages.dev/" },
-  { label: "Avatar", value: "https://dannyshi.pages.dev/head.jpg" },
-];
+const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
 ---
 
-<BaseLayout title="友链">
+<BaseLayout title="Friends">
   <CardGroup cols="1">
     <MainCard
-      title="Friends"
-      description="收录朋友们的站点，也欢迎申请互链。"
+      title="Friends & Resources"
+      description="A collection of links to friends, useful resources, and contributors who inspired or shaped Glacio."
       textOverlay="FRIENDS"
       infoIcon="lucide:link"
     >
@@ -30,200 +23,150 @@ const applyTemplate = [
         <section>
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
             <Icon name="lucide:users" class="w-6 h-6 text-primary" />
-            <span>Links</span>
+            <span>Friends</span>
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <FriendCard
-              name="蓝色奇夸克"
-              avatar="https://lsqkk.github.io/image/logo_blue.png"
-              description="无穷的远方，无数的人们，都和我有关。"
-              url="https://lsqkk.github.io"
+              name="Example Studio"
+              avatar="/template-avatar.svg"
+              description="A sample friend card for personal sites, blogs, and independent project pages."
+              url="https://example.com/studio"
               type="friend"
             />
             <FriendCard
-              name="XJTU-AUTO2506"
-              avatar="https://raw.githubusercontent.com/lsqkk/image/main/202510131153031.png"
-              description="为世界之光。"
-              url="https://auto2506.github.io"
+              name="Docs Garden"
+              avatar="/template-avatar.svg"
+              description="A documentation-style site focused on notes, references, and tidy long-form writing."
+              url="https://example.com/docs"
               type="friend"
             />
             <FriendCard
-              name="Kumomayu"
-              avatar="https://kumomayu.pages.dev/profile.png"
-              description="侬好"
-              url="https://kumomayu.pages.dev/"
-              type="friend"
-            />
-            <FriendCard
-              name="Axi's Blog"
-              avatar="https://axi404.top/avatar/avatar.png"
-              description="一只可爱小猫"
-              url="https://axi404.top"
+              name="Frontend Notes"
+              avatar="/template-avatar.svg"
+              description="A compact design and frontend journal with experiments, snippets, and visual studies."
+              url="https://example.com/notes"
               type="friend"
             />
           </div>
         </section>
 
-        <section class="rounded-2xl border border-primary/20 bg-base-200/40 backdrop-blur-md p-5 sm:p-7 space-y-6">
-          <header class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-primary/15 text-primary flex items-center justify-center">
-              <Icon name="lucide:folder-plus" class="w-6 h-6" />
-            </div>
-            <div>
-              <h2 class="text-2xl font-bold leading-tight">Apply Links</h2>
-              <p class="text-base-content/70">友链申请，让我们成为朋友吧。</p>
-            </div>
-          </header>
+        <section>
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Icon name="lucide:git-pull-request" class="w-6 h-6 text-primary" />
+            <span>Contributors</span>
+          </h2>
 
-          <div class="border-t border-base-content/10 pt-6 space-y-5">
-            <div class="rounded-2xl border border-base-content/10 bg-base-100/40 p-4 sm:p-5">
-              <p class="text-base-content/85 mb-4 flex items-center gap-2">
-                <Icon name="lucide:info" class="w-4 h-4 text-info" />
-                <span>本站信息如下（点击可快速复制）：</span>
-              </p>
-
-              <div class="space-y-3">
-                {
-                  applyTemplate.map((item) => (
-                    <button
-                      type="button"
-                      class="friend-apply-copy-btn group"
-                      data-friend-copy={item.value}
-                      aria-label={`复制 ${item.label}`}
-                    >
-                      <span class="friend-apply-key">{item.label}:</span>
-                      <span class="friend-apply-value">{item.value}</span>
-                      <span class="friend-apply-status" data-copy-status>
-                        点击复制
-                      </span>
-                    </button>
-                  ))
-                }
-              </div>
-            </div>
-
-            <p class="text-base-content/80 flex items-center gap-2">
-              <Icon name="lucide:square-pen" class="w-4 h-4 text-warning" />
-              <span>申请时还请按照这个模板留言。</span>
-            </p>
-
-            <div class="rounded-2xl border border-base-content/10 bg-base-100/40 p-4 sm:p-5">
-              <h3 class="font-semibold text-lg mb-3 flex items-center gap-2">
-                <Icon name="lucide:badge-check" class="w-5 h-5 text-success" />
-                <span>申请说明</span>
-              </h3>
-              <ul class="list-disc pl-6 space-y-2 text-base-content/85">
-                <li>请先在你的友链页添加本站。</li>
-                <li>请确保你的网站可以正常访问。</li>
-                <li>博客内容需合法合规，且无恶意跳转。</li>
-              </ul>
-            </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <FriendCard
+              name="EveSunMaple"
+              avatar="https://github.com/EveSunMaple.png"
+              description="Original author of Frosti, the project that Glacio learned from and later diverged from."
+              url="https://github.com/EveSunMaple"
+              type="contributor"
+            />
+            <FriendCard
+              name="Template Maintainer"
+              avatar="/template-avatar.svg"
+              description="Use this slot for the current maintainer or the main person responsible for your public template."
+              url="https://github.com/example"
+              type="contributor"
+            />
+            <FriendCard
+              name="Community Contributor"
+              avatar="/template-avatar.svg"
+              description="A place to credit collaborators, bug reporters, translators, designers, or documentation help."
+              url="https://github.com/example"
+              type="contributor"
+            />
           </div>
         </section>
+
+        <section>
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Icon name="lucide:bookmark" class="w-6 h-6 text-primary" />
+            <span>Useful Resources</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <LinkCard
+              title="Astro Documentation"
+              desc="The official Astro documentation, from basic setup to advanced routing, content, and deployment."
+              url="https://docs.astro.build"
+              icon="simple-icons:astro"
+              categories={["Docs", "Learning", "Reference"]}
+            />
+
+            <LinkCard
+              title="Tailwind CSS Documentation"
+              desc="Reference for utility-first styling, responsive design patterns, and theme customization."
+              url="https://tailwindcss.com/docs"
+              icon="simple-icons:tailwindcss"
+              categories={["Docs", "CSS", "Reference"]}
+            />
+
+            <LinkCard
+              title="daisyUI Components"
+              desc="Browse component patterns and theme options used throughout this template."
+              url="https://daisyui.com/components/"
+              icon="simple-icons:daisyui"
+              categories={["Components", "UI", "Reference"]}
+            />
+
+            <LinkCard
+              title="Frosti Repository"
+              desc="The original project that inspired this template before it was substantially rewritten."
+              url="https://github.com/EveSunMaple/Frosti"
+              icon="ri:github-line"
+              categories={["Inspiration", "Template", "Reference"]}
+            />
+          </div>
+        </section>
+
+        <div class="divider my-8">
+          <Icon name="lucide:heart" class="w-10 h-10 text-primary" />
+        </div>
+
+        <div class="text-center">
+          <p class="text-base-content/80 mb-4">
+            This page can serve as a blogroll, a credits page, or a curated resource hub for the people and tools behind your site.
+          </p>
+          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="btn btn-primary gap-2">
+            <Icon name="lucide:github" class="w-5 h-5" />
+            <span>Contribute on GitHub</span>
+          </a>
+        </div>
       </div>
     </MainCard>
 
     <Card>
       <div class="p-4 sm:p-6">
-        <Comments serverURL="https://my-repo-xi-green.vercel.app/" path={commentPath} />
+        <div class="space-y-10">
+          <section>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
+              <h2 class="text-2xl font-bold flex items-center gap-2">
+                <Icon name="lucide:layout-template" class="w-6 h-6 text-primary" />
+                <span>Sites Using Glacio</span>
+              </h2>
+              <a
+                href="https://github.com/example"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm btn-outline btn-primary gap-2"
+              >
+                <Icon name="lucide:plus-circle" class="w-4 h-4" />
+                <span>Add Your Site</span>
+              </a>
+            </div>
+            <p class="text-base-content/70 mb-6">
+              Showcase blogs and portfolios built on Glacio here, or turn this block into a small gallery of community forks and adaptations.
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              {sites.map((site) => <Showcase name={site.name} url={site.url} />)}
+            </div>
+          </section>
+        </div>
       </div>
     </Card>
   </CardGroup>
 </BaseLayout>
-
-<style>
-  .friend-apply-copy-btn {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 72px 1fr auto;
-    gap: 0.75rem;
-    align-items: center;
-    text-align: left;
-    border: 1px solid oklch(var(--bc) / 0.08);
-    background: oklch(var(--b1) / 0.6);
-    border-radius: 0.75rem;
-    padding: 0.65rem 0.8rem;
-    transition: all 0.2s ease;
-  }
-
-  .friend-apply-copy-btn:hover {
-    border-color: oklch(var(--p) / 0.35);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px oklch(var(--bc) / 0.08);
-  }
-
-  .friend-apply-key {
-    font-weight: 600;
-    color: oklch(var(--bc) / 0.8);
-  }
-
-  .friend-apply-value {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    color: oklch(var(--bc) / 0.9);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .friend-apply-status {
-    font-size: 0.75rem;
-    color: oklch(var(--bc) / 0.55);
-    opacity: 0;
-    transform: translateX(4px);
-    transition: all 0.2s ease;
-  }
-
-  .friend-apply-copy-btn:hover .friend-apply-status,
-  .friend-apply-copy-btn.is-copied .friend-apply-status {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .friend-apply-copy-btn.is-copied {
-    border-color: oklch(var(--su) / 0.45);
-    background: oklch(var(--su) / 0.08);
-  }
-
-  @media (max-width: 640px) {
-    .friend-apply-copy-btn {
-      grid-template-columns: 64px 1fr;
-    }
-
-    .friend-apply-status {
-      display: none;
-    }
-  }
-</style>
-
-<script is:inline>
-  const setupFriendApplyCopy = () => {
-    const buttons = document.querySelectorAll("[data-friend-copy]");
-    buttons.forEach((button) => {
-      if (button.dataset.copyBound === "true") return;
-      button.dataset.copyBound = "true";
-      button.addEventListener("click", async () => {
-        const text = button.getAttribute("data-friend-copy") || "";
-        const status = button.querySelector("[data-copy-status]");
-        try {
-          await navigator.clipboard.writeText(text);
-          button.classList.add("is-copied");
-          if (status) status.textContent = "已复制";
-          setTimeout(() => {
-            button.classList.remove("is-copied");
-            if (status) status.textContent = "点击复制";
-          }, 1200);
-        } catch (error) {
-          if (status) status.textContent = "复制失败";
-          setTimeout(() => {
-            if (status) status.textContent = "点击复制";
-          }, 1200);
-          console.error("Failed to copy friend apply field:", error);
-        }
-      });
-    });
-  };
-
-  document.addEventListener("astro:page-load", setupFriendApplyCopy);
-  setupFriendApplyCopy();
-</script>

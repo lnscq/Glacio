@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import GitHubStats from "@/components/mdx/GitHubStats.astro";
@@ -6,51 +6,46 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
 
 <BaseLayout title="Home">
   <main class="page-wrap">
-    <!-- Top Profile -->
     <section class="container">
       <div class="top-grid">
         <div class="profile glass">
           <div class="profile-meta">
-            <h1 class="name">Danny</h1>
+            <h1 class="name">Glacio</h1>
 
             <div class="chips">
-              <a class="chip" href="#" aria-label="Location">
-                <Icon name="lucide:map-pin" class="ico" />
-                <span>China</span>
-              </a>
-              <a class="chip" href="https://github.com/lnscq" target="_blank" aria-label="GitHub">
-                <Icon name="lucide:github" class="ico" />
-                <span>GitHub</span>
-              </a>
-              <a class="chip" href="/contact" aria-label="Email">
-                <Icon name="lucide:mail" class="ico" />
-                <span>Email</span>
-              </a>
-              <a class="chip" href="https://openreview.net/profile?id=%7EChengqi_Shi1" aria-label="Scholar">
-                <Icon name="lucide:graduation-cap" class="ico" />
-                <span>Scholar</span>
+              <a class="chip" href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                <Icon name="lucide:globe" class="ico" />
+                <span>Website</span>
               </a>
               <a
                 class="chip"
-                href="/CV/CV_estudiante_microthali.pdf"
+                href="https://github.com/example"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="CV"
+                aria-label="GitHub"
               >
-                <Icon name="lucide:file-text" class="ico" />
-                <span>CV</span>
+                <Icon name="lucide:github" class="ico" />
+                <span>GitHub</span>
+              </a>
+              <a class="chip" href="mailto:hello@example.com" aria-label="Email">
+                <Icon name="lucide:mail" class="ico" />
+                <span>Email</span>
+              </a>
+              <a class="chip" href="/about" aria-label="About">
+                <Icon name="lucide:user-round" class="ico" />
+                <span>About</span>
               </a>
             </div>
 
             <div class="headline">
-              <span class="badge">学生</span>
+              <span class="badge">Glacio</span>
               <span class="sep">/</span>
-              <span class="motto">Cogito, ergo sum.</span>
+              <span class="motto">Clean writing, calm visuals, fast pages.</span>
             </div>
 
             <p class="about">
-              I am a first-year student at Xi'an Jiaotong University, majoring in Computer Science and Technology.
-              Welcome to my personal website!
+              Glacio is an Astro template for blogs, notes, and lightweight portfolios. It keeps a personal homepage feel
+              while staying structured enough for public reuse and quick customization.
             </p>
 
             <div class="cta-row">
@@ -61,13 +56,12 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
               </a>
               <a class="btn ghost" href="/about">
                 <Icon name="lucide:user" class="ico" />
-                <span>More about me</span>
+                <span>About Glacio</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Right: Quick Stats / Highlights -->
         <div class="right-stack">
           <div class="glass card">
             <div class="card-title">
@@ -77,15 +71,15 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
             <div class="quick-links">
               <a class="ql" href="/about">
                 <Icon name="lucide:user" class="ico" />
-                <span>关于我</span>
+                <span>About</span>
               </a>
               <a class="ql" href="/blog/categories">
                 <Icon name="lucide:archive" class="ico" />
-                <span>文章归档</span>
+                <span>Categories</span>
               </a>
-              <a class="ql" href="/contact">
+              <a class="ql" href="mailto:hello@example.com">
                 <Icon name="lucide:mail" class="ico" />
-                <span>联系我</span>
+                <span>Contact</span>
               </a>
             </div>
           </div>
@@ -97,14 +91,13 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
             </div>
             <div class="status">
               <span class="dot"></span>
-              <span>开学了...</span>
+              <span>Ready for your content</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
     <section class="container section">
       <div class="section-head">
         <h2>About</h2>
@@ -112,65 +105,60 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
 
       <div class="glass section-card">
         <div class="section-text intro-block">
-          <p>Hi! I'm Danny👋, a computer science undergraduate at Xi'an Jiaotong University（西安交通大学）.</p>
+          <p>Glacio is designed for people who want a polished personal site without starting from a blank screen.</p>
           <p>
-            I have a passion for embodied AI 🤖 and computer vision 👁️‍🗨️. This website is a space where I share my
-            projects, thoughts, and experiences. Feel free to explore and reach out if you'd like to connect! 🤝
+            It works well for essays, study notes, devlogs, project updates, and compact portfolios, with room to adapt
+            the voice and content to your own work.
           </p>
         </div>
         <div class="cv-block">
-          <p class="cv-line">Here is my academic CV, feel free to download it.</p>
-          <a class="cv-btn" href="/CV/CV_estudiante_microthali.pdf" target="_blank" rel="noopener noreferrer" download>
-            <Icon name="lucide:download" class="ico" />
-            <span>Download CV</span>
+          <p class="cv-line">
+            Use this area for a resume link, a short callout, or a highlighted page you want visitors to open first.
+          </p>
+          <a class="cv-btn" href="/about">
+            <Icon name="lucide:file-text" class="ico" />
+            <span>Read the Setup Notes</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
     <section class="container section">
       <div class="section-head">
-        <h2>Education</h2>
+        <h2>Highlights</h2>
       </div>
 
       <div class="edu-grid">
-        <a
-          class="glass edu-card edu-link"
-          href="https://bjb.xjtu.edu.cn/info/1071/1237.htm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="glass edu-card edu-link" href="/about">
           <div class="edu-top">
-            <div class="edu-title">西安交通大学</div>
-            <div class="edu-role">少年班</div>
+            <div class="edu-title">Profile</div>
+            <div class="edu-role">Example</div>
           </div>
-          <div class="edu-time">2023.9 - 2025.7</div>
+          <div class="edu-time">Introduce yourself, your work, or the purpose of the site.</div>
         </a>
 
-        <a class="glass edu-card edu-link" href="http://www.cs.xjtu.edu.cn/" target="_blank" rel="noopener noreferrer">
+        <a class="glass edu-card edu-link" href="/project">
           <div class="edu-top">
-            <div class="edu-title">西安交通大学</div>
-            <div class="edu-role">计算机科学与技术</div>
+            <div class="edu-title">Projects</div>
+            <div class="edu-role">Showcase</div>
           </div>
-          <div class="edu-time">2025.9 - present</div>
+          <div class="edu-time">Highlight repositories, case studies, experiments, or selected writing.</div>
         </a>
       </div>
     </section>
 
-    <!-- GitHub Dashboard -->
     <section class="container section">
       <div class="section-head">
         <h2 class="row">
           <Icon name="lucide:github" class="ico" />
-          <span>项目数据看板</span>
+          <span>GitHub Dashboard</span>
         </h2>
       </div>
 
       <div class="glass dash">
         <GitHubStats
-          username="lnscq"
-          repositoryName="Danny-s-blog"
+          username="example"
+          repositoryName="example-blog-template"
           showLanguages={true}
           showContributors={true}
           showStars={true}
@@ -179,120 +167,8 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
       </div>
     </section>
 
-    <!-- Featured Song (Random Beatles Embed) -->
-    <section class="container section">
-      <h2 class="text-2xl font-bold mb-6 flex items-center justify-between gap-2">
-        <span class="flex items-center gap-2">
-          <Icon name="lucide:music" class="w-6 h-6 text-primary" />
-          <span>Featured Song · The Beatles</span>
-        </span>
-
-        <span class="text-sm text-base-content/60">
-          更新时间 / Updated
-          <span class="font-medium" id="song-updated"></span>
-        </span>
-      </h2>
-
-      <script is:inline>
-        // 1) 更新时间（UTC+8�?
-        const el = document.getElementById("song-updated");
-        if (el) {
-          const s = new Intl.DateTimeFormat("zh-CN", {
-            timeZone: "Asia/Shanghai",
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          }).format(new Date());
-          el.textContent = s;
-        }
-        const BEATLES_EMBEDS = [
-          {
-            songName: "Hey Jude",
-            artist: "The Beatles",
-            note: "刷新会随机一首/ Random on refresh",
-            appleMusicLink: "https://music.apple.com/cn/song/hey-jude/1441164426",
-            // 常用做法：用包含该曲目的专辑/合辑 embed（单�?embed 并不总是稳定�?
-            embedUrl: "https://embed.music.apple.com/cn/album/1/1441133180",
-          },
-          {
-            songName: "Let It Be",
-            artist: "The Beatles",
-            note: "刷新会随机一首/ Random on refresh",
-            appleMusicLink: "https://music.apple.com/cn/song/let-it-be/1441164524",
-            embedUrl: "https://embed.music.apple.com/cn/album/let-it-be/1441164495",
-          },
-        ];
-
-        function pickOne(list) {
-          return list[Math.floor(Math.random() * list.length)];
-        }
-
-        const picked = pickOne(BEATLES_EMBEDS);
-
-        const noteEl = document.getElementById("featured-note");
-        const songEl = document.getElementById("featured-song");
-        const artistEl = document.getElementById("featured-artist");
-        const linkEl = document.getElementById("featured-link");
-        const frameEl = document.getElementById("featured-iframe");
-
-        if (noteEl) noteEl.textContent = picked.note;
-        if (songEl) songEl.textContent = picked.songName;
-        if (artistEl) artistEl.textContent = picked.artist;
-
-        if (linkEl) linkEl.setAttribute("href", picked.appleMusicLink);
-        if (frameEl) frameEl.setAttribute("src", picked.embedUrl);
-      </script>
-
-      <div class="card bg-base-200 p-6 shadow-md">
-        <div class="flex flex-col gap-4">
-          <!-- Text row -->
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <p class="text-sm text-base-content/60" id="featured-note">刷新会随机一首?/ Random on refresh</p>
-              <h3 class="text-xl font-bold leading-snug" id="featured-song">The Beatles</h3>
-              <p class="text-base-content/70" id="featured-artist">The Beatles</p>
-            </div>
-
-            <a
-              class="btn btn-primary gap-2"
-              id="featured-link"
-              href="https://music.apple.com/cn/artist/the-beatles/136975"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon name="lucide:external-link" class="w-5 h-5" />
-              <span>Apple Music 上打开</span>
-            </a>
-          </div>
-
-          <!-- Player -->
-          <div class="bg-base-100/60 rounded-xl p-3">
-            <iframe
-              id="featured-iframe"
-              title="Apple Music Player"
-              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-              frameborder="0"
-              height="175"
-              style="width:100%; max-width:100%; overflow:hidden; border-radius:12px;"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              src="https://embed.music.apple.com/cn/album/1/1441133180"></iframe>
-
-            <div class="alert bg-base-100/60 mt-3">
-              <Icon name="lucide:info" class="w-5 h-5" />
-              <span class="text-sm">
-                提示：稍等一会链接即可呈现~多数浏览器不允许“自动播放有声音的音乐”，需要你先点一次播放键?
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer class="container foot muted">
-      <span>© {new Date().getFullYear()} Danny</span>
+      <span>© {new Date().getFullYear()} Glacio</span>
     </footer>
   </main>
 
@@ -393,7 +269,11 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
 
     :global(body) {
       background:
-        radial-gradient(620px 620px at var(--mouse-x, 50vw) var(--mouse-y, 35vh), var(--cursor-glow-a), transparent 62%),
+        radial-gradient(
+          620px 620px at var(--mouse-x, 50vw) var(--mouse-y, 35vh),
+          var(--cursor-glow-a),
+          transparent 62%
+        ),
         radial-gradient(
           920px 760px at calc(var(--mouse-x, 50vw) + 18%) calc(var(--mouse-y, 35vh) - 15%),
           var(--cursor-glow-b),
@@ -696,9 +576,6 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
       transform: translateY(-1px);
       background: var(--btn-bg-hover);
       border-color: var(--btn-border-hover);
-    }
-    .cv-sep {
-      opacity: 0.5;
     }
 
     .edu-grid {
