@@ -56,17 +56,17 @@ site:
       target: _self
     - id: contact
       text: Contact
-      href: "mailto:hello@example.com"
+      href: "https://github.com/lnscq/Glacio/"
       target: _blank
-      svg: "material-symbols:attach-email-outline-rounded"
+      svg: "ri:github-line"
 
 user:
   name: Glacio User
-  site: "https://example.com/"
+  site: "https://glacio.pages.dev/"
   avatar: /template-avatar.svg
   sidebar:
     social:
-      - href: "https://github.com/example"
+      - href: "https://github.com/lnscq/Glacio/"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
@@ -76,7 +76,7 @@ user:
         svg: "ri:twitter-x-line"
   footer:
     social:
-      - href: "https://github.com/example"
+      - href: "https://github.com/lnscq/Glacio/"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"

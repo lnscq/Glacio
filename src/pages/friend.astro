@@ -8,7 +8,7 @@ import Card from "@/components/temple/Card.astro";
 import CardGroup from "@/components/temple/CardGroup.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
+const sites = [{ name: "Glacio Demo", url: "https://glacio.pages.dev/" }];
 ---
 
 <BaseLayout title="Friends">
@@ -66,17 +66,17 @@ const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
               type="contributor"
             />
             <FriendCard
-              name="Template Maintainer"
-              avatar="/template-avatar.svg"
-              description="Use this slot for the current maintainer or the main person responsible for your public template."
-              url="https://github.com/example"
+              name="Danny's Blog"
+              avatar="https://dannyshi.pages.dev/head.jpg"
+              description="This is the main contributor to the secondary development of this template"
+              url="https://dannyshi.pages.dev"
               type="contributor"
             />
             <FriendCard
               name="Community Contributor"
               avatar="/template-avatar.svg"
               description="A place to credit collaborators, bug reporters, translators, designers, or documentation help."
-              url="https://github.com/example"
+              url="https://github.com/lnscq/Glacio/"
               type="contributor"
             />
           </div>
@@ -129,9 +129,15 @@ const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
 
         <div class="text-center">
           <p class="text-base-content/80 mb-4">
-            This page can serve as a blogroll, a credits page, or a curated resource hub for the people and tools behind your site.
+            This page can serve as a blogroll, a credits page, or a curated resource hub for the people and tools behind
+            your site.
           </p>
-          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="btn btn-primary gap-2">
+          <a
+            href="https://github.com/lnscq/Glacio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary gap-2"
+          >
             <Icon name="lucide:github" class="w-5 h-5" />
             <span>Contribute on GitHub</span>
           </a>
@@ -149,7 +155,7 @@ const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
                 <span>Sites Using Glacio</span>
               </h2>
               <a
-                href="https://github.com/example"
+                href="https://github.com/lnscq/Glacio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-sm btn-outline btn-primary gap-2"
@@ -159,7 +165,8 @@ const sites = [{ name: "Glacio Demo", url: "https://example.com/" }];
               </a>
             </div>
             <p class="text-base-content/70 mb-6">
-              Showcase blogs and portfolios built on Glacio here, or turn this block into a small gallery of community forks and adaptations.
+              Showcase blogs and portfolios built on Glacio here, or turn this block into a small gallery of community
+              forks and adaptations.
             </p>
             <div class="flex flex-wrap items-center gap-3">
               {sites.map((site) => <Showcase name={site.name} url={site.url} />)}
